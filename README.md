@@ -8,7 +8,6 @@ This project provides a straightforward way to get started with Together AI's po
 
 ## Prerequisites
 
-- Node.js (version 23 or higher recommended)
 - A free Together AI account and API key ([Get one here](https://together.ai))
 
 ## Installation
@@ -35,7 +34,7 @@ If you prefer to do it yourself or if you're running Windows, you can manually i
 
 Follow the simple instructions on the [Node.js website](https://nodejs.org/en/download).
 
-_Ensure you pick your OS from the dropdown menu._
+_Ensure you pick your OS from the dropdown menu. Version 23 or higher is recommended._
 
 #### Clone the Repository
 
