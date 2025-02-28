@@ -13,7 +13,7 @@ import util from 'node:util';
  * 
  * **Example:**
  * ```js
- * const answer = await getUserInput('What is your name?');
+ * const answer = await system.input('What is your name?');
  * console.log(`The user's name is ${answer}`);
  * ```
  *
@@ -22,7 +22,7 @@ import util from 'node:util';
  * @param {string} prompt - The question to ask the user.
  * @returns {Promise<string>} The user's input.
  */
-export async function getUserInput(prompt) {
+async function input(prompt) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -35,3 +35,7 @@ export async function getUserInput(prompt) {
 
   return answer;
 }
+
+export const system = {
+  input,
+};
