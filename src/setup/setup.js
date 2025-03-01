@@ -1,5 +1,6 @@
 import fs from 'node:fs';
-import { getUserInput } from '../utils/input.js';
+import { system } from '../utils/system.js';
+
 /**
  * Setup script for the project.
  *
@@ -24,7 +25,7 @@ function saveApiKey(apiKey) {
 }
 
 async function getApiKey() {
-  const apiKey = await getUserInput('\n\n 🖥️  Please enter your Together API key: ');
+  const apiKey = await system.input('\n\n 🖥️  Please enter your Together API key: ');
   return apiKey;
 }
 
