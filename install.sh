@@ -29,7 +29,6 @@ function verify_node_version() {
         exit 1
     fi
     nvm use $NODE_VERSION
-    nvm current
     if [ $? -ne 0 ]; then
         echo -e "${COLOR_RED}[ERROR] Failed to set Node.js v$NODE_VERSION as current version.${COLOR_RESET}"
         exit 1
