@@ -6,6 +6,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm run --silent setup",
+    "setup": "node --env-file-if-exists=.env src/setup/setup.js",
     "start": "node --env-file=.env src/index.js",
     "example/review": "node --env-file=.env src/examples/review.js",
     "example/agent": "node --env-file=.env src/examples/agent.js"
