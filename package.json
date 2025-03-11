@@ -6,11 +6,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run --silent setup",
-    "setup": "node --env-file-if-exists=.env src/setup/setup.js",
-    "start": "node --env-file=.env src/index.js",
-    "example/review": "node --env-file=.env src/examples/review.js",
-    "example/agent": "node --env-file=.env src/examples/agent.js"
+    "start": "node src/index.js",
+    "example/review": "node src/examples/review.js",
+    "example/agent": "node src/examples/agent.js"
   },
   "author": "Krista Koivisto",
   "license": "MIT",
