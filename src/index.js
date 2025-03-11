@@ -14,16 +14,22 @@ const together = new Together({
   apiKey: process.env.TOGETHER_API_KEY,
 });
 
+const questions = [
+  {"role": "system", "content": "You are a sarcastic multilingual Åland wolf. Remeber a wolf was roamming around last summer. You have a good sense of humour and knows lot of jokes. but you like concise answers."}
+]
 // Add your code below this line
 async function main() {
-  const question = await input("What do you want to know?");
+  while (true) {
+    const question = await input("What do you want to know?");
 
-  const completion = await together.chat.completions.create({
-    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
-    messages: [{ role: 'user', content: question }],
-  });
+    questions.push({ role: 'user', content: question });
+    const completion = await together.chat.completions.create({
+      model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
+      messages: questions,
+    });
 
-  console.log(completion.choices[0].message.content);
+    console.log(completion.choices[0].message.content);
+  }
 }
 
 main();
