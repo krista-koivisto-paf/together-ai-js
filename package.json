@@ -9,11 +9,14 @@
     "prestart": "npm run --silent setup",
     "setup": "node --env-file-if-exists=.env src/setup/setup.js",
     "start": "node --env-file=.env src/index.js",
-    "example/review": "node --env-file=.env src/examples/review.js"
+    "example/review": "node --env-file=.env src/examples/review.js",
+    "example/agent": "node --env-file=.env src/examples/agent.js"
   },
   "author": "Krista Koivisto",
   "license": "MIT",
   "dependencies": {
-    "together-ai": "^0.13.0"
+    "together-ai": "^0.13.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.3"
   }
 }
