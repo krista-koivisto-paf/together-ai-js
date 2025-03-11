@@ -1,5 +1,7 @@
 import Together from 'together-ai';
 
+import {input} from './utils/system.js';
+
 // Documentation:
 // https://docs.together.ai/docs/introduction
 //
@@ -13,10 +15,15 @@ const together = new Together({
 });
 
 // Add your code below this line
+async function main() {
+  const question = await input("What do you want to know?");
 
-const completion = await together.chat.completions.create({
-  model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
-  messages: [{ role: 'user', content: 'Top 3 things to do in New York?' }],
-});
+  const completion = await together.chat.completions.create({
+    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
+    messages: [{ role: 'user', content: question }],
+  });
 
-console.log(completion.choices[0].message.content);
+  console.log(completion.choices[0].message.content);
+}
+
+main();
